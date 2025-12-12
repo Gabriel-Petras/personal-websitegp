@@ -2,11 +2,12 @@ export default function Projects() {
   const projects = [
     {
       id: 1,
-      title: 'E-Commerce Platform',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      technologies: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS'],
-      liveLink: '#',
-      githubLink: '#',
+      title: 'Gym Website',
+      description: 'Simple gym website',
+      technologies: ['HTML', 'CSS', 'JavaScript'],
+      image: '/gym.jpg',
+      liveLink: 'https://gabriel-petras.github.io/gymdemo/',
+      githubLink: 'https://github.com/Gabriel-Petras/gymdemo',
     },
     {
       id: 2,
@@ -69,8 +70,15 @@ export default function Projects() {
               key={project.id}
               className="bg-white dark:bg-black rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200 dark:border-gray-800"
             >
-              <div className="h-48 w-full bg-gray-200 dark:bg-gray-800">
-              </div>
+              {project.image ? (
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="h-48 w-full object-cover"
+                />
+              ) : (
+                <div className="h-48 w-full bg-gray-200 dark:bg-gray-800"></div>
+              )}
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-foreground mb-2">{project.title}</h3>
                 <p className="text-gray-600 dark:text-gray-400 mb-4">{project.description}</p>
@@ -106,6 +114,7 @@ export default function Projects() {
     </section>
   );
 }
+
 
 
 
