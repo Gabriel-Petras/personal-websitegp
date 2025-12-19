@@ -14,7 +14,7 @@ export default function Projects() {
       title: 'Restaurant Website',
       description: 'A beautiful and responsive restaurant website showcasing menus, reservations, and dining experience.',
       technologies: ['HTML', 'CSS', 'JavaScript'],
-      image: '/res.jfif',
+      image: '/images.jfif',
       liveLink: 'https://gabriel-petras.github.io/restaurantdemo/',
       githubLink: '#',
     },
