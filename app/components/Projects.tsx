@@ -11,6 +11,15 @@ export default function Projects() {
     },
     {
       id: 2,
+      title: 'Restaurant Website',
+      description: 'A beautiful and responsive restaurant website showcasing menus, reservations, and dining experience.',
+      technologies: ['HTML', 'CSS', 'JavaScript'],
+      image: '/res.jfif',
+      liveLink: 'https://gabriel-petras.github.io/restaurantdemo/',
+      githubLink: '#',
+    },
+    {
+      id: 3,
       title: 'Task Management App',
       description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
       technologies: ['React', 'Node.js', 'MongoDB', 'Express'],
@@ -18,7 +27,7 @@ export default function Projects() {
       githubLink: '#',
     },
     {
-      id: 3,
+      id: 4,
       title: 'Social Media Dashboard',
       description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
       technologies: ['React', 'TypeScript', 'Chart.js', 'REST API'],
@@ -26,7 +35,7 @@ export default function Projects() {
       githubLink: '#',
     },
     {
-      id: 4,
+      id: 5,
       title: 'Weather Application',
       description: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
       technologies: ['React', 'API Integration', 'CSS3'],
@@ -34,7 +43,7 @@ export default function Projects() {
       githubLink: '#',
     },
     {
-      id: 5,
+      id: 6,
       title: 'Blog Platform',
       description: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.',
       technologies: ['Next.js', 'MDX', 'Tailwind CSS'],
@@ -42,7 +51,7 @@ export default function Projects() {
       githubLink: '#',
     },
     {
-      id: 6,
+      id: 7,
       title: 'Portfolio Website',
       description: 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.',
       technologies: ['Next.js', 'TypeScript', 'Framer Motion'],
