@@ -1,4 +1,59 @@
+'use client';
+
+import { useState } from 'react';
+
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+  const [isLoading, setIsLoading] = useState(false);
+  const [statusMessage, setStatusMessage] = useState('');
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    
+    if (!formData.name || !formData.email || !formData.message) {
+      alert('Please fill in all fields');
+      return;
+    }
+
+    setIsLoading(true);
+    setStatusMessage('');
+
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setStatusMessage('✓ Email sent successfully!');
+        setFormData({ name: '', email: '', message: '' });
+        setTimeout(() => setStatusMessage(''), 3000);
+      } else {
+        setStatusMessage('✗ Failed to send email. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      setStatusMessage('✗ An error occurred. Please try again.');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <section
       id="contact"
@@ -26,8 +81,8 @@ export default function Contact() {
                     </div>
                     <div>
                       <p className="text-sm text-gray-500 dark:text-gray-400">Email</p>
-                      <a href="mailto:your.email@example.com" className="text-foreground hover:text-blue-600 dark:hover:text-blue-400">
-                        your.email@example.com
+                      <a href="mailto:petrasgabrijel@gmail.com" className="text-foreground hover:text-blue-600 dark:hover:text-blue-400">
+                        petrasgabrijel@gmail.com
                       </a>
                     </div>
                   </div>
@@ -72,7 +127,7 @@ export default function Contact() {
             </div>
             <div>
               <h3 className="text-xl font-semibold text-foreground mb-4">Send a Message</h3>
-              <form className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
                     Name
@@ -81,6 +136,8 @@ export default function Contact() {
                     type="text"
                     id="name"
                     name="name"
+                    value={formData.name}
+                    onChange={handleChange}
                     className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 text-foreground focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400"
                     placeholder="Your Name"
                   />
@@ -93,6 +150,8 @@ export default function Contact() {
                     type="email"
                     id="email"
                     name="email"
+                    value={formData.email}
+                    onChange={handleChange}
                     className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 text-foreground focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400"
                     placeholder="your.email@example.com"
                   />
@@ -104,16 +163,24 @@ export default function Contact() {
                   <textarea
                     id="message"
                     name="message"
+                    value={formData.message}
+                    onChange={handleChange}
                     rows={6}
                     className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 text-foreground focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400"
                     placeholder="Your message..."
                   ></textarea>
                 </div>
+                {statusMessage && (
+                  <div className={`text-center py-2 rounded ${statusMessage.includes('✓') ? 'bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-100' : 'bg-red-100 text-red-700 dark:bg-red-900 dark:text-red-100'}`}>
+                    {statusMessage}
+                  </div>
+                )}
                 <button
                   type="submit"
-                  className="w-full px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium"
+                  disabled={isLoading}
+                  className="w-full px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Send Message
+                  {isLoading ? 'Sending...' : 'Send Message'}
                 </button>
               </form>
             </div>
@@ -123,7 +190,3 @@ export default function Contact() {
     </section>
   );
 }
-
-
-
-
