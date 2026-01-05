@@ -22,69 +22,46 @@ export default function Skills() {
     return () => observer.disconnect();
   }, []);
 
-  const benefits = [
-    {
-      title: 'First Impressions Matter',
-      description: 'Your website is often the first interaction potential customers have with your business. A professional, well-designed site builds trust and credibility instantly.',
-      icon: '✨',
-    },
-    {
-      title: 'Increased Conversion Rates',
-      description: 'Good design guides users naturally through your site, making it easier for them to find what they need and take action, directly impacting your bottom line.',
-      icon: '📈',
-    },
-    {
-      title: 'Mobile-First Experience',
-      description: 'With over 60% of web traffic coming from mobile devices, a responsive design ensures you don\'t lose potential customers on smaller screens.',
-      icon: '📱',
-    },
-    {
-      title: 'Better Search Rankings',
-      description: 'Search engines favor well-structured, fast-loading websites. Good design often includes SEO best practices that help you rank higher.',
-      icon: '🔍',
-    },
-    {
-      title: 'Competitive Advantage',
-      description: 'In today\'s digital marketplace, a polished website sets you apart from competitors and positions your brand as modern and reliable.',
-      icon: '🏆',
-    },
-    {
-      title: 'Reduced Bounce Rate',
-      description: 'Users leave poorly designed sites quickly. An intuitive, attractive design keeps visitors engaged longer, increasing the chance of conversion.',
-      icon: '⏱️',
-    },
-  ];
-
   return (
     <section
       id="skills"
       ref={ref}
-      className="py-20 bg-gray-50 dark:bg-gray-900 snap-start"
+      className="relative py-32 bg-gray-50 dark:bg-gray-900 snap-start overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Why Good Design Matters</h2>
-          <div className="w-24 h-1 bg-blue-600 dark:bg-blue-400 mx-auto"></div>
-          <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            A well-designed website is more than aesthetics—it's a powerful business tool that drives results
-          </p>
-        </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {benefits.map((benefit, index) => (
-            <div
-              key={index}
-              className={`bg-white dark:bg-black p-6 rounded-lg shadow-md transition-all duration-500 ${
-                animate ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              }`}
-              style={{ transitionDelay: `${index * 100}ms` }}
-            >
-              <div className="text-4xl mb-4">{benefit.icon}</div>
-              <h3 className="text-xl font-semibold text-foreground mb-3">{benefit.title}</h3>
-              <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                {benefit.description}
-              </p>
-            </div>
-          ))}
+      {/* Background Video */}
+      <div className="absolute inset-0 z-0">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover opacity-50"
+        >
+          <source src="/stonks.mov" type="video/quicktime" />
+          <source src="/stonks.mov" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-black/40 dark:bg-black/60"></div>
+      </div>
+
+      {/* Content */}
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className={`transition-all duration-1000 ${
+          animate ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Why Good Design Matters</h2>
+          <div className="w-24 h-1 bg-blue-400 mb-8"></div>
+          
+          <div className="text-lg text-gray-100 leading-relaxed space-y-4">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </p>
+            <p>
+              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <p>
+              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+            </p>
+          </div>
         </div>
       </div>
     </section>
