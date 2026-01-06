@@ -9,7 +9,7 @@ export default function Contact() {
     message: ''
   });
   const [isLoading, setIsLoading] = useState(false);
-  const [statusMessage, setStatusMessage] = useState('');
+  const [statuwhiteessage, setStatuwhiteessage] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -28,7 +28,7 @@ export default function Contact() {
     }
 
     setIsLoading(true);
-    setStatusMessage('');
+    setStatuwhiteessage('');
 
     try {
       const response = await fetch('/api/send-email', {
@@ -40,15 +40,15 @@ export default function Contact() {
       });
 
       if (response.ok) {
-        setStatusMessage('✓ Email sent successfully!');
+        setStatuwhiteessage('✓ Email sent successfully!');
         setFormData({ name: '', email: '', message: '' });
-        setTimeout(() => setStatusMessage(''), 3000);
+        setTimeout(() => setStatuwhiteessage(''), 3000);
       } else {
-        setStatusMessage('✗ Failed to send email. Please try again.');
+        setStatuwhiteessage('✗ Failed to send email. Please try again.');
       }
     } catch (error) {
       console.error('Error:', error);
-      setStatusMessage('✗ An error occurred. Please try again.');
+      setStatuwhiteessage('✗ An error occurred. Please try again.');
     } finally {
       setIsLoading(false);
     }
@@ -57,13 +57,13 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="py-20 bg-white dark:bg-black"
+      className="py-20 bg-black text-white min-h-screen bg-gradient-to-b from-black-200 via-gray to-blue-600"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 white:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Get In Touch</h2>
+          <h2 className="text-white md:text-5xl font-bold text-foreground mb-4">Get In Touch</h2>
           <div className="w-24 h-1 bg-blue-600 dark:bg-blue-400 mx-auto"></div>
-          <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          <p className="mt-6 text-lg text-white dark:text-white max-w-2xl mx-auto">
             I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
           </p>
         </div>
@@ -71,7 +71,7 @@ export default function Contact() {
           <div className="grid md:grid-cols-2 gap-12">
             <div className="space-y-6">
               <div>
-                <h3 className="text-xl font-semibold text-foreground mb-4">Contact Information</h3>
+                <h3 className="text-white font-semibold text-foreground mb-4">Contact Information</h3>
                 <div className="space-y-4">
                   <div className="flex items-center space-x-4">
                     <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center">
@@ -80,8 +80,8 @@ export default function Contact() {
                       </svg>
                     </div>
                     <div>
-                      <p className="text-sm text-gray-500 dark:text-gray-400">Email</p>
-                      <a href="mailto:petrasgabrijel@gmail.com" className="text-foreground hover:text-blue-600 dark:hover:text-blue-400">
+                      <p className="text-white text-white dark:text-white">Email</p>
+                      <a href="mailto:petrasgabrijel@gmail.com" className="text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">
                         petrasgabrijel@gmail.com
                       </a>
                     </div>
@@ -98,8 +98,8 @@ export default function Contact() {
                       </svg>
                     </div>
                     <div>
-                      <p className="text-sm text-gray-500 dark:text-gray-400">GitHub</p>
-                      <span className="text-foreground group-hover:text-blue-600 dark:group-hover:text-blue-400">
+                      <p className="text-white text-white dark:text-white">GitHub</p>
+                      <span className="text-gray-300 group-hover:text-blue-600 dark:group-hover:text-blue-400">
                         github.com/Gabriel-Petras
                       </span>
                     </div>
@@ -116,8 +116,8 @@ export default function Contact() {
                       </svg>
                     </div>
                     <div>
-                      <p className="text-sm text-gray-500 dark:text-gray-400">LinkedIn</p>
-                      <span className="text-foreground group-hover:text-blue-600 dark:group-hover:text-blue-400">
+                      <p className="text-white text-white dark:text-white">LinkedIn</p>
+                      <span className="text-gray-300 group-hover:text-blue-600 dark:group-hover:text-blue-400">
                         linkedin.com/in/gabriel-petraš-90279b393
                       </span>
                     </div>
@@ -126,10 +126,10 @@ export default function Contact() {
               </div>
             </div>
             <div>
-              <h3 className="text-xl font-semibold text-foreground mb-4">Send a Message</h3>
+              <h3 className="text-white font-semibold text-foreground mb-4">Send a Message</h3>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
+                  <label htmlFor="name" className="block text-white font-medium text-foreground mb-2">
                     Name
                   </label>
                   <input
@@ -143,7 +143,7 @@ export default function Contact() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
+                  <label htmlFor="email" className="block text-white font-medium text-foreground mb-2">
                     Email
                   </label>
                   <input
@@ -157,7 +157,7 @@ export default function Contact() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
+                  <label htmlFor="message" className="block text-white font-medium text-foreground mb-2">
                     Message
                   </label>
                   <textarea
@@ -167,12 +167,13 @@ export default function Contact() {
                     onChange={handleChange}
                     rows={6}
                     className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 text-foreground focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400"
+                    
                     placeholder="Your message..."
                   ></textarea>
                 </div>
-                {statusMessage && (
-                  <div className={`text-center py-2 rounded ${statusMessage.includes('✓') ? 'bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-100' : 'bg-red-100 text-red-700 dark:bg-red-900 dark:text-red-100'}`}>
-                    {statusMessage}
+                {statuwhiteessage && (
+                  <div className={`text-center py-2 rounded ${statuwhiteessage.includes('✓') ? 'bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-100' : 'bg-red-100 text-red-700 dark:bg-red-900 dark:text-red-100'}`}>
+                    {statuwhiteessage}
                   </div>
                 )}
                 <button

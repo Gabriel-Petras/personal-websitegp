@@ -49,21 +49,13 @@ export default function Projects() {
       technologies: ['Next.js', 'MDX', 'Tailwind CSS'],
       liveLink: '#',
       githubLink: '#',
-    },
-    {
-      id: 7,
-      title: 'Portfolio Website',
-      description: 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.',
-      technologies: ['Next.js', 'TypeScript', 'Framer Motion'],
-      liveLink: '#',
-      githubLink: '#',
-    },
+    }
   ];
 
   return (
     <section
       id="projects"
-      className="py-20 bg-white dark:bg-black"
+      className="py-20 bg-black text-white min-h-screen bg-gradient-to-t from-black-200 to-blue-600"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">

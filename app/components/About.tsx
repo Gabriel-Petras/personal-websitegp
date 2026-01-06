@@ -4,7 +4,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="py-20 bg-black text-white min-h-screen bg-gradient-to-r from-black-200 via-gray to-gray-200"
+      className="py-20 bg-black text-white min-h-screen bg-gradient-to-b from-black-200 to-blue-600"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
