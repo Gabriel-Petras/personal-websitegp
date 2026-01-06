@@ -58,13 +58,17 @@ export default function Projects() {
       className="py-20 bg-black text-white min-h-screen bg-gradient-to-t from-black-200 to-blue-600"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Featured Projects</h2>
-          <div className="w-24 h-1 bg-blue-600 dark:bg-blue-400 mx-auto"></div>
-          <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            A collection of projects showcasing my skills and experience
-          </p>
+        <div className="bg-gradient-to-b from-blue to-black py-12 px-4 rounded-lg mb-6">
+          <div className="text-center mb-12">
+            <h2 className="text-white md:text-5xl font-bold text-foreground mb-4">Featured Projects</h2>
+            <div className="w-24 h-1 bg-blue-600 dark:bg-blue-400 mx-auto mb-6"></div>
+            <p className="text-white text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+              A collection of projects showcasing my skills and experience
+            </p>
+          </div>
         </div>
+
+
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
             <div
