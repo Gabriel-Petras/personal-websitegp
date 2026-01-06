@@ -40,11 +40,12 @@ export default function Skills() {
         >
           <source src="/stonks.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-black/25"></div>
+        <div className="absolute inset-0 bg-black/50 "></div>
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+ <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
         <div className={`bg-black/50 backdrop-blur-sm rounded-lg p-8 md:p-12 transition-all duration-1000 ${
           animate ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}>
