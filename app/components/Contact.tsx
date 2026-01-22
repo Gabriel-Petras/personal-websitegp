@@ -125,7 +125,7 @@ export default function Contact() {
                 </div>
               </div>
             </div>
-            <div>
+            {/* <div>
               <h3 className="text-white font-semibold text-foreground mb-4">Send a Message</h3>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
@@ -184,7 +184,7 @@ export default function Contact() {
                   {isLoading ? 'Sending...' : 'Send Message'}
                 </button>
               </form>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
