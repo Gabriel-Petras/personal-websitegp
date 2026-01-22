@@ -17,38 +17,6 @@ export default function Projects() {
       image: '/images.jfif',
       liveLink: 'https://gabriel-petras.github.io/restaurantdemo/',
       githubLink: '#',
-    },
-    {
-      id: 3,
-      title: 'Task Management App',
-      description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Express'],
-      liveLink: '#',
-      githubLink: '#',
-    },
-    {
-      id: 4,
-      title: 'Social Media Dashboard',
-      description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-      technologies: ['React', 'TypeScript', 'Chart.js', 'REST API'],
-      liveLink: '#',
-      githubLink: '#',
-    },
-    {
-      id: 5,
-      title: 'Weather Application',
-      description: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-      technologies: ['React', 'API Integration', 'CSS3'],
-      liveLink: '#',
-      githubLink: '#',
-    },
-    {
-      id: 6,
-      title: 'Blog Platform',
-      description: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.',
-      technologies: ['Next.js', 'MDX', 'Tailwind CSS'],
-      liveLink: '#',
-      githubLink: '#',
     }
   ];
 
@@ -69,7 +37,7 @@ export default function Projects() {
         </div>
 
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
           {projects.map((project) => (
             <div
               key={project.id}
